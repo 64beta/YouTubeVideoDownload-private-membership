@@ -9,9 +9,10 @@ def get_ydl_opts():
         "outtmpl": "downloads/listVideos/%(title)s.%(ext)s",
         "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4",
         "merge_output_format": "mp4",
-        "ffmpeg_location": r"ffmpeg/ffmpeg.exe",
+        "ffmpeg_location": os.path.join("ffmpeg", "ffmpeg.exe"),
         "ratelimit": None,
         "skip_unavailable_fragments": False,
+        "js_runtimes": {"node": {}},
     }
 
 def download_single_video(url):

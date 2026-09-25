@@ -19,10 +19,11 @@ def download_playlist(playlist_url):
         "outtmpl": os.path.join(playlist_folder, "%(title)s.%(ext)s"),
         "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4",
         "merge_output_format": "mp4",
-        "ffmpeg_location": r"ffmpeg/ffmpeg.exe",
+        "ffmpeg_location": os.path.join("ffmpeg", "ffmpeg.exe"),
         "concurrent_fragment_downloads": 8,
         "noprogress": False,
         "ratelimit": None,
+        "js_runtimes": {"node": {}},
     }
 
     with yt_dlp.YoutubeDL(ydl_opts_download) as ydl:

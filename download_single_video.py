@@ -9,7 +9,8 @@ def download_video(url):
         "outtmpl": "downloads/videos/%(title)s.%(ext)s",
         "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4",
         "merge_output_format": "mp4",
-        "ffmpeg_location": r"ffmpeg/ffmpeg.exe",
+        "ffmpeg_location": os.path.join("ffmpeg", "ffmpeg.exe"),
+        "js_runtimes": {"node": {}},
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
